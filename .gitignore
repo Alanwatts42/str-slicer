@@ -1,0 +1,7 @@
+# .gitignore
+git-args.txt
+Pipfile
+Pipfile.lock
+data
+reference
+

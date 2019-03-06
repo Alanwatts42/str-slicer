@@ -4,4 +4,5 @@ import csv
 
 
 def scan():
-    with 
+    for line in file:
+        output.writelines(data_parser(line, reps))

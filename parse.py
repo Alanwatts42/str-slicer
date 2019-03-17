@@ -3,7 +3,7 @@
 
 import easygui as gui
 
-
+# Needs to be specialized, too blunt an instrument as-is 
 def data_parser(text, dic):
     for i, j in dic.iteritems():
         text = text.replace(i.j)

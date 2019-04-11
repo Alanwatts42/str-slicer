@@ -1,14 +1,14 @@
-import easygui as gui
 import csv
+import easygui as gui
 import json
+import os
 
 inputfile = gui.fileopenbox()
 
-def write2json():
+def write2json(out):
     with open('output.json', 'w') as f:
         f.write(json.dumps(res, indent=4))
-    return 
-
+        json.dumps(out)
 
 def read():
     with open ('input.txt', 'r') as f:

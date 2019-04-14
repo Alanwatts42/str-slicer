@@ -2,25 +2,68 @@
 import os
 import os.path
 
-"""For testing techniques for text parsing without building ui"""
+"""testing techniques for text parsing without building ui"""
 
 def getpath(dir_lo = '.'):
     cp = os.getcwd()
     acp = os.path.abspath(cp)
-    output acp.split(os.path.sep)
+    return acp.split(os.path.sep)
 
-def grabfile(args):
-    infile = open("data/aptlist.txt")
+def slicegrabber(pth=''):
 
-   outfile = open("data/output.csv", 'w')
+    with open('pth', 'r') as infile  # open and close file using 'with'
+    # 'r' reader arg used for infile
 
-    for i in range(1):
+    with open('pth', 'w') as outfile
+    # 'w' writer arg used for outfile to write to
+
+
+    for line in infile.readlines():
+        print(line, end='')
+
         infile.next() # skip first line
     for line in infile:
         outfile.writelines(lines, reps)
 
-def writefile():
+def slicewriter():
     pass
 
+
+
+# custom file reader class template:
+
+class slicereader():
+
+    def __init__(self, file_path):
+
+        self.__path = file_path
+
+        self.__file_object = none
+
+    def __enter__(self):
+
+        self.__file_object = open(self.__path)
+
+        return self
+
+
+    def __exit__(self, type, val, tb):
+
+        self..__file_object.close()
+
+        # additional methods
+
+# Now customer class slicereader() can be used similarly
+# to Open() built-in method
+
+with slicereader('apt-list.txt') as reader:
+
+    # perform custom class operations
+
+    pass
+
+
+
+
 if __name__ == '__main__':
-    print(getpath())
+    print('getpath()')

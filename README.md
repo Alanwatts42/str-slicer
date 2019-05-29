@@ -1,4 +1,4 @@
-#Str-slicer: Project Outline
+# Str-slicer: Project Outline
 
 
 """ The Primary use case for this tool will be to read text from any source,
@@ -7,7 +7,7 @@ especially unorganized sources which are traditionally difficult to go
  or just a more readable text file.
 """
 
-#Parse
+# Parse
 
 """
 The Parse module houses the functions that can be  imported
@@ -44,18 +44,18 @@ will prove to be an effective template, or at the very
 least a good place to start.
 """
 
-##Parse.scan
+## Parse.scan
 /#Iterate through the document, line by line, and read text into Parse to be
 processed.
 
 
-##Parse.slice
+## Parse.slice
 /#Take apart text from scan function and output it into an ordered dict
 /#dict will then get passed to another function (or module) to be
 /#exported to whatever the output format will be (json, xml, text, csv)
 
 
-#Export
+# Export
 """
 After text has been converted to a dataform such as a dictionary after
 having been processed by Parse.py, this Export module will convert the 

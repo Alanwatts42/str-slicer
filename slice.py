@@ -62,8 +62,5 @@ with slicereader('apt-list.txt') as reader:
 
     pass
 
-
-
-
 if __name__ == '__main__':
     print('getpath()')

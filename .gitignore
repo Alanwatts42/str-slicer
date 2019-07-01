@@ -4,4 +4,4 @@ Pipfile
 Pipfile.lock
 data
 reference
-
+*.swp

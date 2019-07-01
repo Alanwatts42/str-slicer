@@ -1,7 +1,4 @@
-
 # -*- coding: UTF-8 -*-
-
-import easygui as gui
 
 # Needs to be specialized, too blunt an instrument as-is 
 def data_parser(text, dic):
@@ -9,18 +6,17 @@ def data_parser(text, dic):
         text = text.replace(i.j)
     return text
 
-
 def main():
 
     # User selects unspecified type of file, probably .txt
-    datafile = gui.fileopenbox(msg="Open", title="Select file to parse",
-                               default='*', filetypes=None, multiple=False)
+    datafile = gui.fileopenbox(
+        msg="Open",
+        title="Select file to parse",
+        default='*',
+        filetypes=None,
+        multiple=False
+    )
 
-    # User saves new parsed .csv file containing data from original file
-    savefile = gui.filesavebox(
-                               msg="Select where to save new parsed data file",
-                               title="Save Parsed Data", default='newdata.csv',
-                               filetypes="*.csv")
 
     reps = {
             '"NAN"': 'NAN',

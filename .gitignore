@@ -5,3 +5,5 @@ Pipfile.lock
 data
 reference
 *.swp
+*.tmp.*
+*.tmp

@@ -1,28 +1,43 @@
 # Str-slicer: Project Outline
 
 
-""" The Primary use case for this tool will be to read text from any source,
+""" 
+The Primary use case for this tool will be to read text from any source,
 especially unorganized sources which are traditionally difficult to go
- through and reformat by hand, and then reformat said text into a csv, json,
- or just a more readable text file.
+through and reformat by hand, and then reformat said text into a csv, 
+json, or just a more readable text file.
 """
 
 # Parse
 
-"""
-The Parse module houses the functions that can be  imported
-to the modules the user interacts with, and provide the core
-functionality used to parse and reformat text from 
-the user-selected file. Since the input file could be any
-filetype that contains text, the module uses a simple 
-algorithm to decide exactly how to parse the text data.
+The Parse module houses the core functionality used to parse and reformat 
+text from the user-selected file. Since the input file could be any
+filetype that contains text, a 'slicer' or parsing module is selected,
+which determines exactly how the text data is parsed.
 
-    1. Input algorithm
+Slicers - Parsing modules, each of which would enable a different method 
+of parsing the input data, or a different use-case. Determining which 
+slicer is appropriate for which input data is a necessary step in parsing 
+the data, since the slicer contains the precise steps used to parse the 
+data.  Because these slicers are modular, changing how the input data is 
+parsed is simply a matter of using a different slicer. This also makes it 
+much easier for me to organize these parsing methods.
+
+    1. Input algorithms
         a. Sort
         verify
-        b. Parse
+        b. Pre-processing
         verify
-        c. pass data to output as Python object (dict or list)
+        c. pass data to parser
+
+    2. Parsing        
+        a. Receive input data
+        verify
+        b. Choose a slicer (based on type of data & use-case)
+        verify
+        c. Parse the data using the chosen slicer
+        verify
+        d. Pass to output algorithm to be exported
 
     2. Output algorithm
         a. Receive file from input
@@ -31,51 +46,24 @@ algorithm to decide exactly how to parse the text data.
         verify
         c. Output to file
 
+### Should 'input', 'parse', and 'output' be seperate steps, or should they be combined together?
+ - If I start with each process as its own separate script, and realize later that the other combining them would be better, it would perhaps be easier to change my approach if I simply had to combine these processes together than if I had to seperate them.
+ - A single process may prove to be useful on it's own, without the others. If that is the case, having them seperated would make it easier to apply any single process to another problem without having to apply all of them at once to that other problem.
+ - The project as a whole is more versatile if the processes are seperated, because it enables us to deploy them in a variety of combinations, or even rearrange them to apply them in a different order if necessary.
 
-More important than the software itself is the process. '
-This project is far more valuable as a trial for working 
-out a design process than it likely ever will be for 
-parsing data. 
+## Scan
+ - Iterate through the document, line by line, and read text into Parse 
+to be processed.
 
-Hopefully a tight focus on one singular 
-piece of this software at any one time, and a commitment 
-to finishing one thing before moving on to the next, 
-will prove to be an effective template, or at the very 
-least a good place to start.
-"""
-
-## Parse.scan
-/#Iterate through the document, line by line, and read text into Parse to be
-processed.
-
-
-## Parse.slice
-/#Take apart text from scan function and output it into an ordered dict
-/#dict will then get passed to another function (or module) to be
-/#exported to whatever the output format will be (json, xml, text, csv)
-
+## Slice
+ - Take apart text from scan function and output it into an ordered dict
+dict will then get passed to another function (or module) to be
+exported to whatever the output format will be (json, xml, text, csv)
 
 # Export
-"""
-After text has been converted to a dataform such as a dictionary after
-having been processed by Parse.py, this Export module will convert the 
-data structure (list or dict) with the text data into
+ - After text has been converted to a more digestable form, such as a 
+dictionary after having been processed by Parse.py, this Export module 
+will convert the data structure (list or dict) with the text data into
 whatever format the user selects: Json, CSV, XML, HTML, Text.
-"""
 
-It's worth mentioning that this readme has a lot more to do with organizing my
-own process building this simple python project. As a result, there might be
-things described in this readme that I haven't done yet, and may not end up
-doing. Since the project itself may change drastically, the same changes may or
-may not be reflected here, though I will do my best to keep it updated so it
-corresponds with what I actually end up with.
 
-If you're reading this, thanks for checking out my little project, and feel free
-to do whatever it is that github and the open source license let you do.
-Feedback of any kind is always appreciated, my goal with this is to get better.
-Hopefully as this project progresses, it will also serve as something that
-potential employers an look at to evaluate my coding. If you are such an
-employer, and my coding is passible, go ahead and hire me. You'll be glad you did.
-
-Thank you for reading this document, that is it's purpose after all. Whatever
-your reason is for checking out my project, thank you for your attention.

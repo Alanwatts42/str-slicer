@@ -3,7 +3,7 @@ import re
 syslog = '/var/log/syslog'  # log to be searched
 sys_errors = []
 line_num = 0
-pattern = re.compile("error", re.IGNORECASE)  # re search term: "error"
+pattern = re.compile(".*error.*", re.IGNORECASE)  # regex search pattern
 with open(syslog, 'rt') as logfile:
     for entry in logfile:
         line_num += 1

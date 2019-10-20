@@ -11,7 +11,7 @@ inputfile = open('test.dat')
 outputfile = open('test.csv', 'w')
 
 
-# sample text string, just for demonstration to let you know how the data looks like
+# sample text string, just for demonstration to let you know how the data looks
 # my_text = '"2012-06-23 03:09:13.23",4323584,-1.911224,-0.4657288,-0.1166382,-0.24823,0.256485,"NAN",-0.3489428,-0.130449,-0.2440527,-0.2942413,0.04944348,0.4337797,-1.105218,-1.201882,-0.5962594,-0.586636'
 
 # dictionary definition 0-, 1- etc. are there to parse the date block delimited with dashes, and make sure the negative numbers are not effected
